@@ -1,0 +1,78 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+	color: #00B7FF;
+}
+
+.profile-header img{
+	display: inline;
+	max-height:100px;
+	margin-right: 10px;
+}
+
+.profile-header {
+	display: flex;
+	align-items: flex-end;
+}
+
+.btn {
+	margin-bottom: 10px;
+}
+
+.right-col {
+	display: flex;
+	justify-content: flex-end;
+	align-items: baseline;
+	text-align: right;
+}
+
+.post-content .links {
+	display: block;
+}
+
+p{
+	white-space: pre-line;
+}
+
+.header {
+	display: flex;
+	align-items: baseline;
+	border-bottom: 1px solid lightgray;
+	margin-bottom:40px;
+}
+
+.header-item {
+	flex-grow:1;
+}
+
+.space-left {
+	margin-left:10px;
+}
+
+.list-group-item.post-content > p {
+	margin-bottom: 30px;
+}
+
+.post-content .links * {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown {
+	display:inline;
+}
+
+.two-separated-cols {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.two-separated-cols button{
+	margin-bottom:5px;
+}
+

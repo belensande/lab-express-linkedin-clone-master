@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="header">
+					<div class="header-item">
+						<h1>LinkedIn Clone</h1>
+					</div>
+					<div class="header-item right-col">
+						<% if (logged && dir !== '/login' && dir !== '/signup') { %>
+							<h3>Hi <%= user.name %>!</h3>
+							<div class="space-left">
+								<div class="dropdown">
+								  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu <span class="caret"></span></button>
+								  <ul class="dropdown-menu">
+									<li><a href="/users/<%= user._id %>/posts/new">New Post</a></li>
+									<li><a href="/relations/<%= user._id %>/requests">Requests</a></li>
+									<li><a href="/relations/<%= user._id %>">Relations</a></li>
+									<li><a href="/users/<%= user._id %>">Timeline</a></li>
+									<li><a href="/profiles/<%= user._id %>">Profile</a></li>
+								  </ul>
+								</div>
+								<a href="/logout" class="btn btn-default" role="button">Log Out</a>
+							</div>
+						<% } else if( dir !== '/login' && dir !== '/signup') { %>
+							<a href="/login" class="btn btn-default" role="button">Log In</a>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%- body %>
+	</div>
+  </body>
+</html>

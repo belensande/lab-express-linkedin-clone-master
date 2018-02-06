@@ -1,0 +1,11 @@
+<h3>Relations</h3>
+<div list="list-group">
+<% if(!friends.length) { %>
+  <h4>No relations</h4>
+<% } %>
+<% for (let i = 0; i < friends.length; i++) { %>
+  <div class="list-group-item">
+    <h4><a href="/profiles/<%= friends[i]._id %>"><%= friends[i].name %></a></h4>
+  </div>
+<% } %>
+</div>

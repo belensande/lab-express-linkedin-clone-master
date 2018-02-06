@@ -1,0 +1,14 @@
+<h3>Requests</h3>
+<div list="list-group">
+<% if(!requests.length) { %>
+  <h4>No requests</h4>
+<% } %>
+<% for (let i = 0; i < requests.length; i++) { %>
+  <div class="list-group-item two-separated-cols">
+		<h4><a href="/profiles/<%= requests[i].requester._id %>"><%= requests[i].requester.name %></a></h4>
+		<form action="/relations/<%= user._id %>/request/<%= requests[i]._id %>/accept" method="POST">
+      <button type="submit" class="btn btn-primary">Accept</button>
+    </form>
+  </div>
+<% } %>
+</div>

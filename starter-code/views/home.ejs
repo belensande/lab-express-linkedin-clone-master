@@ -1,0 +1,26 @@
+<h3>Posts</h3>
+<div list="list-group">
+<% if(!posts.length) { %>
+  <h4>No posts</h4>
+<% } %>
+<% for (let i = 0; i < posts.length; i++) { %>
+  <div class="list-group-item post-content">
+    <h4><a href="/profiles/<%= posts[i]._created._id %>"><%= posts[i]._created.name %></a></h4>
+    <p align="justify"><%= posts[i].content %></p>
+    <div class="right-col">
+      <span class="small"><%= moment(posts[i].created_at).format("LL, LTS") %> 
+        <% if(user._id == posts[i]._created._id) { %>
+          <div class="links">
+            <a href="/users/<%= user._id %>/posts/<%= posts[i]._id %>/edit">Edit</a>
+            <span>|</span>
+            <form action="/users/<%= user._id %>/posts/<%= posts[i]._id %>/delete" method="POST">
+              <button type="submit" class="btn-link">Delete</button>
+            </form>
+          </div>
+        <% } %>
+      </span>
+    </div>
+  </div>
+<% } %>
+</div>
+  
